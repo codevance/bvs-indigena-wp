@@ -10,8 +10,8 @@ class BVS_Theme {
     wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/main.css');
 
     /* Scripts */
-    wp_enqueue_script( 'jquery' );
-    wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js');
+    wp_enqueue_script( 'jquery', null, null, null, true );
+    wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', null, null, true);
   }
 }
 $BVS_THEME = new BVS_THEME;

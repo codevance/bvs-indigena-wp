@@ -60,7 +60,7 @@
     </nav>
     
     <!-- hero -->
-    <div class="hero">
+    <div class="hero" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/hero.png)">
       <div class="container">
         <div class="brand">
           <img src="<?php echo get_template_directory_uri() ?>/assets/images/logo-bvs.png" alt="">
