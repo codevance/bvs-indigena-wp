@@ -6,7 +6,11 @@ class BVS_Theme {
   }
 
   public function enqueue_assets() {
+    /* Styles */
     wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/main.css');
+
+    /* Scripts */
+    wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js');
   }
 }

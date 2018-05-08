@@ -63,7 +63,7 @@
     <div class="hero">
       <div class="container">
         <div class="brand">
-          <img src="src/images/logo-bvs.png" alt="">
+          <img src="<?php echo get_template_directory_uri() ?>/assets/images/logo-bvs.png" alt="">
           <h1 class="hero-title">Saúde dos povos indígenas</h1>
         </div>
         <div class="content-wrapper">

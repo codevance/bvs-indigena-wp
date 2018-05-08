@@ -32,8 +32,8 @@
           </div>
         </nav>
         <div class="footer-logo">
-          <img src="src/images/logo-ensp.png" class="">
-          <img src="src/images/fiocruz.png" class="">
+          <img src="<?php echo get_template_directory_uri() ?>/assets/images/logo-ensp.png" class="">
+          <img src="<?php echo get_template_directory_uri() ?>/assets/images/fiocruz.png" class="">
         </div>
         <div class="footer-contact">
           <p>ENSP - Escola Nacional de Saúde Pública Sérgio Arouca - Fundação Oswaldo Cruz</p>
