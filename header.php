@@ -35,26 +35,16 @@
           <i class="fas fa-search"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">tipos de documentos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">destaques</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">sobre a BVS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">grupos de pesquisa</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">contato</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">como usar o site</a>
-            </li>
-          </ul>
+          <?php wp_nav_menu(
+            array(
+                'menu' => 'top',
+                'menu_class' => 'navbar-nav ml-auto',
+                'container_class' => 'collapse navbar-collapse',
+                'container_id' => 'navbarSupportedContent',
+                ''
+              )
+            ); 
+          ?>
         </div>
       </div>
     </nav>

@@ -2,11 +2,27 @@
 class BVS_Theme {
 
   public function __construct(){
-    add_action('init', array($this, 'partners_post_type'));
+    add_action( 'init', array($this, 'partners_post_type') );
+    add_action( 'init', array($this, 'register_menus') );
     add_action( 'wp_enqueue_scripts', array($this, 'enqueue_assets') );
     add_action( 'add_meta_boxes', array($this, 'theme_metaboxes') );
     add_action( 'save_post', array($this, 'post_highlight_save'), 10, 2 );
     add_action( 'save_post', array($this, 'partner_url_save'), 10, 2 );
+    add_filter( 'nav_menu_css_class', array($this, 'nav_class'), 10, 2 );
+    add_filter( 'wp_nav_menu', array($this, 'nav_link_class') );
+  }
+
+  public function nav_class( $classes, $item ) {
+    $classes[] = 'nav-item';
+    return $classes;
+  }
+
+  public function nav_link_class( $ulclass ) {
+    return preg_replace('/<a /', '<a class="nav-link"', $ulclass);
+  }
+
+  public function register_menus() {
+    register_nav_menu('top', 'Topo');
   }
 
   public function enqueue_assets() {
