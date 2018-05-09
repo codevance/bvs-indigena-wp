@@ -143,84 +143,78 @@
     </div>
     <div class="destaques-content">
       <div class="row">
-        <div class="col-12 col-lg-6">
-          <div class="featured">
-            <div class="featured-content">
-              <span class="marking" style="background-color: #71B42D"><a href="#">Grupo de pesquisa</a></span>
-              <h6 class="fc-title">
-                <a href="#">Título da notícia em destaque. O título pode ter até duas linhas e ser extenso.</a>
-              </h6>
-              <span class="published">Publicado em 28/02/2018</span>
-              <p class="fc-text">Lorem ipsum dlem acta turis forexne dieutra m dlem acta turis forexne dieutra…
-                <a href="#">Ler mais</a>
-              </p>
+        <?php
+        $args = array(
+          'posts_per_page' => 1,
+          'post_type' => 'post',
+          'meta_key' => 'bvs_highlight',
+          'meta_value' => 'big'
+        );
+        $big_highlight = new WP_Query( $args );
+        if ( $big_highlight->have_posts() ) {
+          while ( $big_highlight->have_posts() ) {
+            $big_highlight->the_post();
+        ?>    
+            <div class="col-12 col-lg-6">
+              <div class="featured" style="background-image: url(<?php the_post_thumbnail(); ?>);">
+                <div class="featured-content">
+                  <span class="marking" style="background-color: #71B42D"><a href="<?php the_permalink(); ?>"><?php echo get_the_category()[0]->cat_name; ?></a></span>
+                  <h6 class="fc-title">
+                  <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                  </h6>
+                  <span class="published">Publicado em <?php echo get_the_date("d/m/Y") ?></span>
+                  <p class="fc-text">
+                    <?php the_excerpt(); ?>
+                    <a href="<?php the_permalink(); ?>">Ler mais</a>
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+        <?php
+          }
+          wp_reset_postdata();
+        }
+        ?>
         <div class="col-12 col-lg-6">
+          <?php
+          $args = array(
+            'posts_per_page' => 3,
+            'post_type' => 'post',
+            'meta_key' => 'bvs_highlight',
+            'meta_value' => 'small'
+          );
+          $small_highlight = new WP_Query( $args );
+          if ( $small_highlight->have_posts() ) {
+            while ( $small_highlight->have_posts() ) {
+              $small_highlight->the_post();
+          ?>    
           <div class="destaque-post">
             <div class="row">
                 <div class="col-12 col-md-4 col-lg-6 col-xl-5">
-                  <a href="#">
-                    <img src="src/images/destaques2.png" class="">
+                  <a href="<?php the_permalink(); ?>">
+                    <img src="<?php the_post_thumbnail(); ?>" class="">
                   </a>
                 </div>
                 <div class="col-12 col-md-8 col-lg-6 col-xl-7">
                 <div class="post-item">
-                  <span class="marking" style="background-color: #95B515"><a href="#">Eventos</a></span>
+                  <span class="marking" style="background-color: #95B515"><a href="<?php the_permalink(); ?>"><?php echo get_the_category()[0]->cat_name; ?></a></span>
                   <h6 class="fc-title">
-                    <a href="#">Título da notícia em destaque. O título pode</a>
+                  <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
                   </h6>
-                  <span class="published">Publicado em 28/02/2018</span>
-                  <p class="fc-text">Lorem ipsum dlem acta turis forexne dieutra m dlem acta turis forexne dieutra…
-                    <a href="#">Ler mais</a>
+                  <span class="published">Publicado em <?php echo get_the_date("d/m/Y") ?></span>
+                  <p class="fc-text">
+                    <?php the_excerpt(); ?>                    
+                    <a href="<?php the_permalink(); ?>">Ler mais</a>
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="destaque-post">
-            <div class="row">
-                <div class="col-12 col-md-4 col-lg-6 col-xl-5">
-                  <a href="#">
-                    <img src="src/images/destaques2.png" class="">
-                  </a>
-                </div>
-                <div class="col-12 col-md-8 col-lg-6 col-xl-7">
-                <div class="post-item">
-                  <span class="marking" style="background-color: #891812"><a href="#">Notícias</a></span>
-                  <h6 class="fc-title">
-                    <a href="#">Título da notícia em destaque. O título pode</a>
-                  </h6>
-                  <span class="published">Publicado em 28/02/2018</span>
-                  <p class="fc-text">Lorem ipsum dlem acta turis forexne dieutra m dlem acta turis forexne dieutra…
-                    <a href="#">Ler mais</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="destaque-post border-none mb-0">
-            <div class="row">
-                <div class="col-12 col-md-4 col-lg-6 col-xl-5">
-                  <a href="#">
-                    <img src="src/images/destaques2.png" class="">
-                  </a>
-                </div>
-                <div class="col-12 col-md-8 col-lg-6 col-xl-7">
-                <div class="post-item">
-                  <span class="marking" style="background-color: #318107"><a href="#">Grupo de pesquisa</a></span>
-                  <h6 class="fc-title">
-                    <a href="#">Título da notícia em destaque. O título pode</a>
-                  </h6>
-                  <span class="published">Publicado em 28/02/2018</span>
-                  <p class="fc-text">Lorem ipsum dlem acta turis forexne dieutra m dlem acta turis forexne dieutra…
-                    <a href="#">Ler mais</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php
+            }
+            wp_reset_postdata();
+          }
+          ?>
         </div>
       </div>
     </div>
