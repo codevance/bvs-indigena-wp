@@ -62,24 +62,31 @@
             <a href="<?php echo (is_home()) ? '#etnias' : '/#etnias' ?>"><span>busca</span> por etnias</a>
             <a href="<?php echo (is_home()) ? '#map' : '/#map' ?>"><span>busca</span> por regiões</a>
           </div>
-          <div class="search">
-            <div class="row">
-              <div class="form-group col-12 col-md-12 col-xl">
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Digite aqui...">
-              </div>
-              <div class="form-group col-12 col-md-8 col-xl-4">
-                <select id="inputState" class="form-control">
-                  <option selected>Todos os tipos de materiais...</option>
-                  <option>...</option>
-                  <option>...</option>
-                  <option>...</option>
-                </select>
-              </div>
-              <div class="col-12 col-md-4 col-xl-2">
-                <button type="button" class="btn btn-success btn-block">Pesquisar</button>
+          <?php if (is_single() || (is_page() && get_the_title() !== 'Home') ) { ?>
+            <div class="hero-info">
+            <h1 class="hi-title"><?php the_title(); ?></h1>
+            <p><?php the_excerpt(); ?></p>
+            </div>
+          <?php } else { ?>
+            <div class="search">
+              <div class="row">
+                <div class="form-group col-12 col-md-12 col-xl">
+                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Digite aqui...">
+                </div>
+                <div class="form-group col-12 col-md-8 col-xl-4">
+                  <select id="inputState" class="form-control">
+                    <option selected>Todos os tipos de materiais...</option>
+                    <option>...</option>
+                    <option>...</option>
+                    <option>...</option>
+                  </select>
+                </div>
+                <div class="col-12 col-md-4 col-xl-2">
+                  <button type="button" class="btn btn-success btn-block">Pesquisar</button>
+                </div>
               </div>
             </div>
-          </div>
+          <?php } ?>
         </div>
       </div>
     </div>
