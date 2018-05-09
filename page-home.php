@@ -156,7 +156,7 @@
             $big_highlight->the_post();
         ?>    
             <div class="col-12 col-lg-6">
-              <div class="featured" style="background-image: url(<?php the_post_thumbnail(); ?>);">
+              <div class="featured" style="background-image: url(<?php echo get_the_post_thumbnail_url(null, 'large'); ?>);">
                 <div class="featured-content">
                   <span class="marking" style="background-color: #71B42D"><a href="<?php the_permalink(); ?>"><?php echo get_the_category()[0]->cat_name; ?></a></span>
                   <h6 class="fc-title">
@@ -192,7 +192,7 @@
             <div class="row">
                 <div class="col-12 col-md-4 col-lg-6 col-xl-5">
                   <a href="<?php the_permalink(); ?>">
-                    <img src="<?php the_post_thumbnail(); ?>" class="">
+                    <?php the_post_thumbnail('thumbnail') ?>
                   </a>
                 </div>
                 <div class="col-12 col-md-8 col-lg-6 col-xl-7">
