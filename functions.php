@@ -2,10 +2,11 @@
 class BVS_Theme {
 
   public function __construct(){
-    add_action( 'wp_enqueue_scripts', array($this, 'enqueue_assets') );
-    add_action( 'save_post', array($this, 'post_highlight_save'), 10, 2 );
-    add_action( 'add_meta_boxes', array($this, 'theme_metaboxes') );
     add_action('init', array($this, 'partners_post_type'));
+    add_action( 'wp_enqueue_scripts', array($this, 'enqueue_assets') );
+    add_action( 'add_meta_boxes', array($this, 'theme_metaboxes') );
+    add_action( 'save_post', array($this, 'post_highlight_save'), 10, 2 );
+    add_action( 'save_post', array($this, 'partner_url_save'), 10, 2 );
   }
 
   public function enqueue_assets() {
@@ -17,10 +18,17 @@ class BVS_Theme {
     wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', null, null, true);
   }
 
+  /*
+   * Post meta stuff
+   */
   public function theme_metaboxes() {
     add_meta_box('bvsPostHighlight', 'Destacar Post', array($this, 'post_highlight_metabox'), 'post', 'side', 'low');
+    add_meta_box('bvsPartnersURL', 'URL do parceiro', array($this, 'partner_url_metabox'), 'bvs_partners', 'side', 'low');
   }
 
+  /*
+   * Post highlights stuff
+   */
   public function post_highlight_metabox() {
     global $post;
     $bvs_highlight = get_post_meta($post->ID, 'bvs_highlight', true);
@@ -44,6 +52,9 @@ class BVS_Theme {
     }
   }
 
+  /*
+   * Partners stuff
+   */
   public function partners_post_type() {
     register_post_type(
       'bvs_partners',
@@ -70,6 +81,20 @@ class BVS_Theme {
         'menu_icon' => 'dashicons-universal-access-alt'
       )
     );
+  }
+  
+  public function partner_url_metabox() {
+    global $post;
+    $partner_url = get_post_meta($post->ID, 'bvs_partner_url', true);
+    require_once get_template_directory() . '/metaboxes/partner_url_metabox.php';
+  }
+
+  public function partner_url_save() {
+    global $post, $post_type;
+    if ($post_type == 'bvs_partners') {
+      $args = $_POST;
+      update_post_meta( $post->ID, 'bvs_partner_url', $args['bvs_partner_url'] );
+    }
   }
 
 }

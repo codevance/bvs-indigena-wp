@@ -228,24 +228,26 @@
       <h2>Parceiros</h2>
     </div>
     <div class="row">
-      <div class="col-6 col-sm-4 col-lg-2">
-        <div class="partners-item"></div>
-      </div>
-      <div class="col-6 col-sm-4 col-lg-2">
-        <div class="partners-item"></div>
-      </div>
-      <div class="col-6 col-sm-4 col-lg-2">
-        <div class="partners-item"></div>
-      </div>
-      <div class="col-6 col-sm-4 col-lg-2">
-        <div class="partners-item"></div>
-      </div>
-      <div class="col-6 col-sm-4 col-lg-2">
-        <div class="partners-item"></div>
-      </div>
-      <div class="col-6 col-sm-4 col-lg-2">
-        <div class="partners-item"></div>
-      </div>
+      <?php
+      $args = array(
+        'posts_per_page' => 6,
+        'post_type' => 'bvs_partners',
+      );
+      $partners = new WP_Query( $args );
+      if ( $partners->have_posts() ) {
+        while ( $partners->have_posts() ) {
+          $partners->the_post();
+      ?>    
+        <div class="col-6 col-sm-4 col-lg-2">
+          <a href="<?php echo get_post_meta($post->ID, 'bvs_partner_url', true); ?>" target="_blank">
+            <?php the_post_thumbnail('thumbnail'); ?>  
+          </a>
+        </div>
+      <?php
+        }
+        wp_reset_postdata();
+      }
+      ?>
     </div>
   </div>
 </section>
