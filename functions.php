@@ -5,6 +5,7 @@ class BVS_Theme {
     add_action( 'wp_enqueue_scripts', array($this, 'enqueue_assets') );
     add_action( 'save_post', array($this, 'post_highlight_save'), 10, 2 );
     add_action( 'add_meta_boxes', array($this, 'theme_metaboxes') );
+    add_action('init', array($this, 'partners_post_type'));
   }
 
   public function enqueue_assets() {
@@ -41,6 +42,34 @@ class BVS_Theme {
       }
 
     }
+  }
+
+  public function partners_post_type() {
+    register_post_type(
+      'bvs_partners',
+      array(
+        'public' => false,
+        'labels' => array(
+          'name' => 'Parceiros',
+          'singular_name' => 'Parceiro',
+          'add_new' => 'Novo',
+          'add_new_item' => 'Novo parceiro',
+          'edit' => 'Editar',
+          'edit_item' => 'Editar parceiro',
+          'new_item' => 'Novo parceiro',
+          'view' => 'Visualizar',
+          'view_item' => 'Visualizar parceiro',
+          'search_items' => 'Pesquisar parceiro',
+          'not_found' => 'Nenhum parceiro',
+          'not_found_in_trash' => 'Lixeira vazia',
+          'menu_name' => 'Parceiros',
+          'all_items' => 'Listar parceiros'
+        ),
+        'show_ui' => true,
+        'supports' => array('title', 'thumbnail'),
+        'menu_icon' => 'dashicons-universal-access-alt'
+      )
+    );
   }
 
 }
