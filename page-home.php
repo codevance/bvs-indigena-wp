@@ -52,63 +52,58 @@
       <div id="sul" class="regiao">
         <div class="pin"></div>
         <h3 class="info-title">Região Sul</h3>
-        <p>Lorem ipsum dlem acta turis forexne dieutra m dlem acta turis forexne dieutra</p>
+        <ul class="info-list">
+          <li><a href="#">Paraná</a></li>
+          <li><a href="#">Santa Catarina</a></li>
+          <li><a href="#">Rio Grande do Sul</a></li>
+        </ul>
       </div>
       <div id="sudeste" class="regiao">
         <div class="pin"></div>
-        <h3 class="info-title">Região Sudetes</h3>
-        <p>Lorem ipsum dlem acta turis forexne dieutra m dlem acta turis forexne dieutra</p>
+        <h3 class="info-title">Região Sudeste</h3>
+        <ul class="info-list">
+          <li><a href="#">Espírito Santo</a></li>
+          <li><a href="#">Minas Gerais</a></li>
+          <li><a href="#">Rio de Janeiro</a></li>
+          <li><a href="#">São Paulo</a></li>
+        </ul>
       </div>
       <div id="centro-oeste" class="regiao">
         <div class="pin"></div>
         <h3 class="info-title">Região Centro Oeste</h3>
-        <p>Lorem ipsum dlem acta turis forexne dieutra m dlem acta turis forexne dieutra</p>
+        <ul class="info-list">
+          <li><a href="#">Distrito Federal</a></li>
+          <li><a href="#">Goiás</a></li>
+          <li><a href="#">Mato Grosso</a></li>
+          <li><a href="#">Mato Grosso do Sul</a></li>
+        </ul>
       </div>
       <div id="nordeste" class="regiao">
         <div class="pin"></div>
         <h3 class="info-title">Região Nordeste</h3>
-        <p>Lorem ipsum dlem acta turis forexne dieutra m dlem acta turis forexne dieutra</p>
+        <ul class="info-list">
+          <li><a href="#">Alagoas</a></li>
+          <li><a href="#">Bahia</a></li>
+          <li><a href="#">Ceará</a></li>
+          <li><a href="#">Maranhão</a></li>
+          <li><a href="#">Paraíba</a></li>
+          <li><a href="#">Pernambuco</a></li>
+          <li><a href="#">Piauí</a></li>
+          <li><a href="#">Rio Grande do Norte</a></li>
+          <li><a href="#">Sergipe</a></li>
+        </ul>
       </div>
       <div id="norte" class="regiao active">
         <div class="pin"></div>
         <h3 class="info-title">Região Norte</h3>
-        <p>Lorem ipsum dlem acta turis forexne dieutra m dlem acta turis forexne dieutra</p>
         <ul class="info-list">
-          <li>
-            <a href="#">Amazonas
-              <span>44 resultados</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">Acre
-              <span>44 resultados</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">Rondônia
-              <span>12 resultados</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">Roraima
-              <span>32 resultados</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">Pará
-              <span>11 resultados</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">Amapá
-              <span>23 resultados</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">Tocantins
-              <span>45 resultados</span>
-            </a>
-          </li>
+          <li><a href="#">Acre</a></li>
+          <li><a href="#">Amapá</a></li>
+          <li><a href="#">Amazonas</a></li>
+          <li><a href="#">Pará</a></li>
+          <li><a href="#">Rondônia</a></li>
+          <li><a href="#">Roraima</a></li>
+          <li><a href="#">Tocantins</a></li>
         </ul>
       </div>
     </div>
