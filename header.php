@@ -58,9 +58,9 @@
         </div>
         <div class="content-wrapper">
           <div class="search-filter">
-            <a href="#" class="active"><span>busca</span> por temas</a>
-            <a href="#"><span>busca</span> por etnias</a>
-            <a href="#"><span>busca</span> por regiões</a>
+            <a href="<?php echo (is_home()) ? '#themes' : '/#theme' ?>"><span>busca</span> por temas</a>
+            <a href="<?php echo (is_home()) ? '#etnias' : '/#etnias' ?>"><span>busca</span> por etnias</a>
+            <a href="<?php echo (is_home()) ? '#map' : '/#map' ?>"><span>busca</span> por regiões</a>
           </div>
           <div class="search">
             <div class="row">

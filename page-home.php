@@ -2,7 +2,7 @@
 <?php get_header(); ?>
 
 <!-- theme -->
-<section class="theme">
+<section class="theme" id="theme">
   <div class="container">
     <div class="theme-title">
       <h2 class="line-bottom">Temas</h2>
@@ -44,7 +44,7 @@
 </section>
 
 <!-- Section Map -->
-<section class="section-map">
+<section class="section-map" id="map">
   <h2 class="sm-title line-bottom">Localização Geográfico</h2>
   <div class="map-container">
   <img src="<?php echo get_template_directory_uri(); ?>/assets/images/map.svg" class="svg">
@@ -111,7 +111,7 @@
 </section>
 
 <!-- etnias -->
-<section class="section-etnias">
+<section class="section-etnias" id="etnias">
   <div class="container">
     <h2 class="se-title line-bottom">Etnias</h2>
     <div class="owl-carousel owl-theme">
