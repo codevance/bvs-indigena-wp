@@ -8,36 +8,15 @@
       <h2 class="line-bottom">Temas</h2>
     </div>
     <div class="owl-carousel owl-theme">
-        <a href="#" class="item" style="background-image: url(src/images/theme.png);">
-          <span class="owl-title">Epidemiologia</span>
-        </a>
-        <a href="#" class="item" style="background-image: url(src/images/theme.png);">
-          <span class="owl-title">Avaliação Nutricional</span>
-        </a>
-        <a href="#" class="item" style="background-image: url(src/images/theme.png);">
-          <span class="owl-title">Medicina Tradicional</span>
-        </a>
-        <a href="#" class="item" style="background-image: url(src/images/theme.png);">
-          <span class="owl-title">Serviços de saúde do indígena</span>
-        </a>
-        <a href="#" class="item" style="background-image: url(src/images/theme.png);">
-          <span class="owl-title">Tuberculose</span>
-        </a>
-        <a href="#" class="item" style="background-image: url(src/images/theme.png);">
-          <span class="owl-title">Epidemiologia</span>
-        </a>
-        <a href="#" class="item" style="background-image: url(src/images/theme.png);">
-          <span class="owl-title">Avaliação Nutricional</span>
-        </a>
-        <a href="#" class="item" style="background-image: url(src/images/theme.png);">
-          <span class="owl-title">Medicina Tradicional</span>
-        </a>
-        <a href="#" class="item" style="background-image: url(src/images/theme.png);">
-          <span class="owl-title">Serviços de saúde do indígena</span>
-        </a>
-        <a href="#" class="item" style="background-image: url(src/images/theme.png);">
-          <span class="owl-title">Tuberculose</span>
-        </a>
+      <?php
+      $subjects = get_page_by_title('Temas', 'OBJECT', 'vhl_collection')->ID; 
+      $args = array('post_parent' => $subjects, 'post_type' => 'vhl_collection', 'post_status' => 'publish');
+      $subjects = get_children($args);
+      foreach ($subjects as $subject) {
+        $subject= get_post($subject);
+      ?>
+        <a href="<?php echo get_permalink($subject->ID) ?>" target="<?php echo get_post_meta($subject->ID, '_links_to_target', true) ?>" class="item" style="background-color: #891812; background-image: url('<?php echo get_the_post_thumbnail_url($subject->ID, 'thumbnail'); ?>')"><span class="owl-title"><?php echo $subject->post_title; ?></span></a>
+      <?php } ?>
     </div>
     <button type="button" class="btn btn-warning mt-5 mb-3">Ver todos</button>
   </div>
