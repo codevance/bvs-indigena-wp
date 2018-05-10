@@ -58,9 +58,9 @@
         </div>
         <div class="content-wrapper">
           <div class="search-filter">
-            <a href="<?php echo (is_home()) ? '#themes' : '/#theme' ?>"><span>busca</span> por temas</a>
-            <a href="<?php echo (is_home()) ? '#etnias' : '/#etnias' ?>"><span>busca</span> por etnias</a>
-            <a href="<?php echo (is_home()) ? '#map' : '/#map' ?>"><span>busca</span> por regiões</a>
+            <a href="<?php echo (is_home()) ? '#themes' : get_site_url() . '#theme' ?>"><span>busca</span> por temas</a>
+            <a href="<?php echo (is_home()) ? '#etnias' : get_site_url() . '#etnias' ?>"><span>busca</span> por etnias</a>
+            <a href="<?php echo (is_home()) ? '#map' : get_site_url() . '#map' ?>"><span>busca</span> por regiões</a>
           </div>
           <?php if (is_single() || (is_page() && get_the_title() !== 'Home') ) { ?>
             <div class="hero-info">
