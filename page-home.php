@@ -9,14 +9,16 @@
     </div>
     <div class="owl-carousel owl-theme">
       <?php
-      $subjects = get_page_by_title('Temas', 'OBJECT', 'vhl_collection')->ID; 
+      $subjects = get_page_by_title('Temas', 'OBJECT', 'vhl_collection'); 
+      if ( !empty($subjects) ) {
+      $subjects = $subjects->ID;
       $args = array('post_parent' => $subjects, 'post_type' => 'vhl_collection', 'post_status' => 'publish');
       $subjects = get_children($args);
       foreach ($subjects as $subject) {
         $subject= get_post($subject);
       ?>
         <a href="<?php echo get_permalink($subject->ID) ?>" target="<?php echo get_post_meta($subject->ID, '_links_to_target', true) ?>" class="item" style="background-color: #891812; background-image: url('<?php echo get_the_post_thumbnail_url($subject->ID, 'thumbnail'); ?>')"><span class="owl-title"><?php echo $subject->post_title; ?></span></a>
-      <?php } ?>
+      <?php } } ?>
     </div>
     <button type="button" class="btn btn-warning mt-5 mb-3">Ver todos</button>
   </div>
@@ -32,57 +34,85 @@
         <div class="pin"></div>
         <h3 class="info-title">Região Sul</h3>
         <ul class="info-list">
-          <li><a href="#">Paraná</a></li>
-          <li><a href="#">Santa Catarina</a></li>
-          <li><a href="#">Rio Grande do Sul</a></li>
+          <?php
+          $states = get_page_by_title('Região Sul', 'OBJECT', 'vhl_collection');
+          if ( !empty($states) ) {
+          $states = $states->ID;
+          $args = array('post_parent' => $states, 'post_type' => 'vhl_collection', 'post_status' => 'publish');
+          $states = get_children($args);
+          foreach ($states as $state) {
+            $state= get_post($state);
+          ?>
+            <li><a href="<?php echo get_permalink($state->ID) ?>" target="<?php echo get_post_meta($state->ID, '_links_to_target', true) ?>"><?php echo $state->post_title; ?></a></li>
+          <?php } } ?>
         </ul>
       </div>
       <div id="sudeste" class="regiao">
         <div class="pin"></div>
         <h3 class="info-title">Região Sudeste</h3>
         <ul class="info-list">
-          <li><a href="#">Espírito Santo</a></li>
-          <li><a href="#">Minas Gerais</a></li>
-          <li><a href="#">Rio de Janeiro</a></li>
-          <li><a href="#">São Paulo</a></li>
+          <?php
+          $states = get_page_by_title('Região Sudeste', 'OBJECT', 'vhl_collection'); 
+          if ( !empty($states) ) {
+          $states = $states->ID;
+          $args = array('post_parent' => $states, 'post_type' => 'vhl_collection', 'post_status' => 'publish');
+          $states = get_children($args);
+          foreach ($states as $state) {
+            $state= get_post($state);
+          ?>
+            <li><a href="<?php echo get_permalink($state->ID) ?>" target="<?php echo get_post_meta($state->ID, '_links_to_target', true) ?>"><?php echo $state->post_title; ?></a></li>
+          <?php } } ?>
         </ul>
       </div>
       <div id="centro-oeste" class="regiao">
         <div class="pin"></div>
         <h3 class="info-title">Região Centro Oeste</h3>
         <ul class="info-list">
-          <li><a href="#">Distrito Federal</a></li>
-          <li><a href="#">Goiás</a></li>
-          <li><a href="#">Mato Grosso</a></li>
-          <li><a href="#">Mato Grosso do Sul</a></li>
+          <?php
+          $states = get_page_by_title('Região Centro Oeste', 'OBJECT', 'vhl_collection'); 
+          if ( !empty($states) ) {
+          $states = $states->ID;
+          $args = array('post_parent' => $states, 'post_type' => 'vhl_collection', 'post_status' => 'publish');
+          $states = get_children($args);
+          foreach ($states as $state) {
+            $state= get_post($state);
+          ?>
+            <li><a href="<?php echo get_permalink($state->ID) ?>" target="<?php echo get_post_meta($state->ID, '_links_to_target', true) ?>"><?php echo $state->post_title; ?></a></li>
+          <?php } } ?>
         </ul>
       </div>
       <div id="nordeste" class="regiao">
         <div class="pin"></div>
         <h3 class="info-title">Região Nordeste</h3>
         <ul class="info-list">
-          <li><a href="#">Alagoas</a></li>
-          <li><a href="#">Bahia</a></li>
-          <li><a href="#">Ceará</a></li>
-          <li><a href="#">Maranhão</a></li>
-          <li><a href="#">Paraíba</a></li>
-          <li><a href="#">Pernambuco</a></li>
-          <li><a href="#">Piauí</a></li>
-          <li><a href="#">Rio Grande do Norte</a></li>
-          <li><a href="#">Sergipe</a></li>
+          <?php
+          $states = get_page_by_title('Região Nordeste', 'OBJECT', 'vhl_collection'); 
+          if ( !empty($states) ) {
+          $states = $states->ID;
+          $args = array('post_parent' => $states, 'post_type' => 'vhl_collection', 'post_status' => 'publish');
+          $states = get_children($args);
+          foreach ($states as $state) {
+            $state= get_post($state);
+          ?>
+            <li><a href="<?php echo get_permalink($state->ID) ?>" target="<?php echo get_post_meta($state->ID, '_links_to_target', true) ?>"><?php echo $state->post_title; ?></a></li>
+          <?php } } ?>
         </ul>
       </div>
       <div id="norte" class="regiao active">
         <div class="pin"></div>
         <h3 class="info-title">Região Norte</h3>
         <ul class="info-list">
-          <li><a href="#">Acre</a></li>
-          <li><a href="#">Amapá</a></li>
-          <li><a href="#">Amazonas</a></li>
-          <li><a href="#">Pará</a></li>
-          <li><a href="#">Rondônia</a></li>
-          <li><a href="#">Roraima</a></li>
-          <li><a href="#">Tocantins</a></li>
+          <?php
+          $states = get_page_by_title('Região Norte', 'OBJECT', 'vhl_collection'); 
+          if ( !empty($states) ) {
+          $states = $states->ID;
+          $args = array('post_parent' => $states, 'post_type' => 'vhl_collection', 'post_status' => 'publish');
+          $states = get_children($args);
+          foreach ($states as $state) {
+            $state= get_post($state);
+          ?>
+            <li><a href="<?php echo get_permalink($state->ID) ?>" target="<?php echo get_post_meta($state->ID, '_links_to_target', true) ?>"><?php echo $state->post_title; ?></a></li>
+          <?php } } ?>
         </ul>
       </div>
     </div>
@@ -95,14 +125,16 @@
     <h2 class="se-title line-bottom">Etnias</h2>
     <div class="owl-carousel owl-theme">
       <?php
-      $etnias = get_page_by_title('Etnias', 'OBJECT', 'vhl_collection')->ID; 
+      $etnias = get_page_by_title('Etnias', 'OBJECT', 'vhl_collection'); 
+      if ( !empty($etnias) ) {
+      $etnias = $etnias->ID;
       $args = array('post_parent' => $etnias, 'post_type' => 'vhl_collection', 'post_status' => 'publish');
       $etnias = get_children($args);
       foreach ($etnias as $etnia) {
         $etnia = get_post($etnia);
       ?>
         <a href="<?php echo get_permalink($etnia->ID) ?>" target="<?php echo get_post_meta($etnia->ID, '_links_to_target', true) ?>" class="item" style="background-color: #891812; background-image: url('<?php echo get_the_post_thumbnail_url($etnia->ID, 'thumbnail'); ?>')"><span class="owl-title"><?php echo $etnia->post_title; ?></span></a>
-      <?php } ?>
+      <?php } } ?>
     </div>
     <button type="button" class="btn btn-warning m-5">Ver todos</button>
   </div>
