@@ -65,7 +65,6 @@
           <?php if (is_single() || (is_page() && get_the_title() !== 'Home') ) { ?>
             <div class="hero-info">
             <h1 class="hi-title"><?php the_title(); ?></h1>
-            <p><?php the_excerpt(); ?></p>
             </div>
           <?php } else { ?>
             <div class="search">
