@@ -69,22 +69,33 @@
             </div>
           <?php } else { ?>
             <div class="search">
-              <div class="row">
+              <form action="http://pesquisa.bvsalud.org/enfermeria/" method="get" target="_blank" class="row">
+                <input type="hidden" name="output" value="site" />
+                <input type="hidden" name="lang" value="pt" />
+                <input type="hidden" name="from" value="0" />
+                <input type="hidden" name="sort" value="" />
+                <input type="hidden" name="format" value="summary" />
+                <input type="hidden" name="count" value="20" />
+                <input type="hidden" name="fb" value="" />
+                <input type="hidden" name="page" value="1" />
+                <input type="hidden" name="search_form_submit" value="Pesquisar" />
+                
                 <div class="form-group col-12 col-md-12 col-xl">
-                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Digite aqui...">
+                  <input type="text" name="q" class="form-control" id="formGroupExampleInput" placeholder="Digite aqui...">
                 </div>
                 <div class="form-group col-12 col-md-8 col-xl-4">
-                  <select id="inputState" class="form-control">
-                    <option selected>Todos os tipos de materiais...</option>
-                    <option>...</option>
-                    <option>...</option>
-                    <option>...</option>
+                  <select id="inputState" class="form-control" name="index">
+                    <option selected value="tw">Todos os tipos de materiais...</option>
+                    <option value="ti">Título</option>
+                    <option value="au">Autor</option>
+                    <option value="mh">Descritor de assunto</option>
+                    <option value="ab">Resumo</option>
                   </select>
                 </div>
                 <div class="col-12 col-md-4 col-xl-2">
-                  <button type="button" class="btn btn-success btn-block">Pesquisar</button>
+                  <button type="submit" class="btn btn-success btn-block">Pesquisar</button>
                 </div>
-              </div>
+              </form>
             </div>
           <?php } ?>
         </div>
