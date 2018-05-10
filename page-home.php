@@ -115,16 +115,15 @@
   <div class="container">
     <h2 class="se-title line-bottom">Etnias</h2>
     <div class="owl-carousel owl-theme">
-      <a href="#" class="item" style="background-color: #891812"><span class="owl-title">Xavante</span></a>
-      <a href="#" class="item" style="background-color: #E59600"><span class="owl-title">Surui</span></a>
-      <a href="#" class="item" style="background-color: #2D9FB4"><span class="owl-title">Guarani</span></a>
-      <a href="#" class="item" style="background-color: #95B515"><span class="owl-title">Baniwa</span></a>
-      <a href="#" class="item" style="background-color: #528912"><span class="owl-title">Kaingång</span></a>
-      <a href="#" class="item" style="background-color: #891812"><span class="owl-title">Xavante</span></a>
-      <a href="#" class="item" style="background-color: #E59600"><span class="owl-title">Surui</span></a>
-      <a href="#" class="item" style="background-color: #2D9FB4"><span class="owl-title">Guarani</span></a>
-      <a href="#" class="item" style="background-color: #95B515"><span class="owl-title">Baniwa</span></a>
-      <a href="#" class="item" style="background-color: #528912"><span class="owl-title">Kaingång</span></a>
+      <?php
+      $etnias = get_page_by_title('Etnias', 'OBJECT', 'vhl_collection')->ID; 
+      $args = array('post_parent' => $etnias, 'post_type' => 'vhl_collection', 'post_status' => 'publish');
+      $etnias = get_children($args);
+      foreach ($etnias as $etnia) {
+        $etnia = get_post($etnia);
+      ?>
+        <a href="<?php echo get_permalink($etnia->ID) ?>" target="<?php echo get_post_meta($etnia->ID, '_links_to_target', true) ?>" class="item" style="background-color: #891812; background-image: url('<?php echo get_the_post_thumbnail_url($etnia->ID, 'thumbnail'); ?>')"><span class="owl-title"><?php echo $etnia->post_title; ?></span></a>
+      <?php } ?>
     </div>
     <button type="button" class="btn btn-warning m-5">Ver todos</button>
   </div>
