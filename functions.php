@@ -10,6 +10,12 @@ class BVS_Theme {
     add_action( 'save_post', array($this, 'partner_url_save'), 10, 2 );
     add_filter( 'nav_menu_css_class', array($this, 'nav_class'), 10, 2 );
     add_filter( 'wp_nav_menu', array($this, 'nav_link_class') );
+    add_filter( 'excerpt_length', array($this, 'custom_excerpt_length'), 999 );
+  }
+
+
+  public function custom_excerpt_length( $length ) {
+    return 20;
   }
 
   public function nav_class( $classes, $item ) {

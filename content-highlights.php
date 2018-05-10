@@ -27,7 +27,7 @@
                   </h6>
                   <span class="published">Publicado em <?php echo get_the_date("d/m/Y") ?></span>
                   <p class="fc-text">
-                    <?php the_excerpt(); ?>
+                    <?php echo get_the_excerpt(); ?>
                     <a href="<?php the_permalink(); ?>">Ler mais</a>
                   </p>
                 </div>
@@ -66,7 +66,6 @@
                   </h6>
                   <span class="published">Publicado em <?php echo get_the_date("d/m/Y") ?></span>
                   <p class="fc-text">
-                    <?php the_excerpt(); ?>                    
                     <a href="<?php the_permalink(); ?>">Ler mais</a>
                   </p>
                 </div>
