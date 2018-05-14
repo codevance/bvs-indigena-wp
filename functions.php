@@ -29,6 +29,7 @@ class BVS_Theme {
 
   public function register_menus() {
     register_nav_menu('top', 'Topo');
+    register_nav_menu('bottom', 'Rodapé');
   }
 
   public function enqueue_assets() {

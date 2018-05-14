@@ -2,34 +2,14 @@
     <div class="footer">
       <div class="container">
         <nav class="navbar navbar-footer navbar-expand-lg">
-          <div class="nav m-auto">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">tipos de documentos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">destaques</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">sobre a BVS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">grupos de pesquisa</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">contato</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">como usar o site</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">termos e condições</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">política de privacidade</a>
-              </li>
-            </ul>
-          </div>
+          <?php wp_nav_menu(
+            array(
+                'menu' => 'top',
+                'menu_class' => 'navbar-nav',
+                'container_class' => 'nav m-auto'
+              )
+            ); 
+          ?>
         </nav>
         <div class="footer-logo">
           <img src="<?php echo get_template_directory_uri() ?>/assets/images/logo-ensp.png" class="">

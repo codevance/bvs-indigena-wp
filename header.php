@@ -40,8 +40,7 @@
                 'menu' => 'top',
                 'menu_class' => 'navbar-nav ml-auto',
                 'container_class' => 'collapse navbar-collapse',
-                'container_id' => 'navbarSupportedContent',
-                ''
+                'container_id' => 'navbarSupportedContent'
               )
             ); 
           ?>
