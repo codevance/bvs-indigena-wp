@@ -3,7 +3,7 @@ class BVS_Theme {
 
   public function __construct(){
     add_action( 'init', array($this, 'partners_post_type') );
-    add_action( 'init', array($this, 'register_menus') );
+    add_action( 'after_setup_theme', array($this, 'register_menus') );
     add_action( 'wp_enqueue_scripts', array($this, 'enqueue_assets') );
     add_action( 'add_meta_boxes', array($this, 'theme_metaboxes') );
     add_action( 'save_post', array($this, 'post_highlight_save'), 10, 2 );

@@ -4,7 +4,8 @@
         <nav class="navbar navbar-footer navbar-expand-lg">
           <?php wp_nav_menu(
             array(
-                'menu' => 'top',
+                'menu' => 'bottom',
+                'theme_location' => 'bottom',
                 'menu_class' => 'navbar-nav',
                 'container_class' => 'nav m-auto'
               )

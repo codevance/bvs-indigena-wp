@@ -38,6 +38,7 @@
           <?php wp_nav_menu(
             array(
                 'menu' => 'top',
+                'theme_location' => 'top',
                 'menu_class' => 'navbar-nav ml-auto',
                 'container_class' => 'collapse navbar-collapse',
                 'container_id' => 'navbarSupportedContent'
