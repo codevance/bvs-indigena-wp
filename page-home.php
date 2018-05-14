@@ -120,7 +120,7 @@
 </section>
 
 <!-- etnias -->
-<section class="section-etnias" id="etnias">
+<section class="section-etnias" id="etnias"style=" background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/etnias.png)">
   <div class="container">
     <h2 class="se-title line-bottom">Etnias</h2>
     <div class="owl-carousel owl-theme">
@@ -161,7 +161,7 @@
       ?>    
         <div class="col-6 col-sm-4 col-lg-2">
           <a href="<?php echo get_post_meta($post->ID, 'bvs_partner_url', true); ?>" target="_blank">
-            <?php the_post_thumbnail('thumbnail'); ?>  
+            <?php the_post_thumbnail('thumbnail', array('class' => 'rounded-circle')); ?>  
           </a>
         </div>
       <?php
