@@ -4,6 +4,7 @@
 			<?php
 			while ( have_posts() ) :
 				the_post();
+        the_post_thumbnail('large', array('class' => 'img-fluid'));
         the_content();
       endwhile;
       ?>
