@@ -25,7 +25,7 @@
           <p class="phone">
             Contato: Tel: (21) 2598-2525
           </p>
-          <a href="#">www.ensp.fiocruz.br</a>
+          <a href="http://www.ensp.fiocruz.br" target="_blank">www.ensp.fiocruz.br</a>
         </div>
       </div>
       <div class="copyright">

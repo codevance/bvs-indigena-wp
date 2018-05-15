@@ -13,14 +13,14 @@
       if ( !empty($subjects) ) {
       $subjects = $subjects->ID;
       $args = array('post_parent' => $subjects, 'post_type' => 'vhl_collection', 'post_status' => 'publish');
-      $subjects = get_children($args);
-      foreach ($subjects as $subject) {
+      $subjects_c = get_children($args);
+      foreach ($subjects_c as $subject) {
         $subject= get_post($subject);
       ?>
         <a href="<?php echo get_permalink($subject->ID) ?>" target="<?php echo get_post_meta($subject->ID, '_links_to_target', true) ?>" class="item" style="background-color: #891812; background-image: url('<?php echo get_the_post_thumbnail_url($subject->ID, 'thumbnail'); ?>')"><span class="owl-title"><?php echo $subject->post_title; ?></span></a>
       <?php } } ?>
     </div>
-    <button type="button" class="btn btn-warning mt-5 mb-3">Ver todos</button>
+    <a href="<?php echo get_permalink($subjects); ?>" class="btn btn-warning mt-5 mb-3" style="padding-top: 14px;">Ver todos</a>
   </div>
 </section>
 
@@ -129,14 +129,14 @@
       if ( !empty($etnias) ) {
       $etnias = $etnias->ID;
       $args = array('post_parent' => $etnias, 'post_type' => 'vhl_collection', 'post_status' => 'publish');
-      $etnias = get_children($args);
-      foreach ($etnias as $etnia) {
+      $etnias_c = get_children($args);
+      foreach ($etnias_c as $etnia) {
         $etnia = get_post($etnia);
       ?>
         <a href="<?php echo get_permalink($etnia->ID) ?>" target="<?php echo get_post_meta($etnia->ID, '_links_to_target', true) ?>" class="item" style="background-color: #891812; background-image: url('<?php echo get_the_post_thumbnail_url($etnia->ID, 'thumbnail'); ?>')"><span class="owl-title"><?php echo $etnia->post_title; ?></span></a>
       <?php } } ?>
     </div>
-    <button type="button" class="btn btn-warning m-5">Ver todos</button>
+    <a href="<?php echo get_permalink($etnias); ?>" class="btn btn-warning mt-5 mb-3" style="padding-top: 14px;">Ver todos</a>
   </div>
 </section>
 
