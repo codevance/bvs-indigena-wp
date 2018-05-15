@@ -36,6 +36,21 @@
     </div>
 
     <?php wp_footer(); ?>
+    <?php if ( is_single() && get_post_type() == 'vhl_collection' ) { ?>
+    <script>
+      $(document).ready(function () {
+        (function ($) {
+          $('#collectionSearchInput').keyup(function () {
+              var rex = new RegExp($(this).val(), 'i');
+              $('.searchable').hide();
+              $('.searchable').filter(function () {
+                  return rex.test($(this).text());
+              }).show();
+          });
+        }(jQuery));
+      });
+    </script>
+    <?php } ?>
 
   </body>
 </html>

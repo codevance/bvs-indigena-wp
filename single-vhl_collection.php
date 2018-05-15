@@ -50,14 +50,16 @@
       $show_anchor = ($anchor !== strtolower($child->post_title[0]) ) ? true : false;
       $anchor = strtolower($child->post_title[0]);
     ?>    
-    <a href="<?php echo get_permalink($child->ID) ?>" target="<?php echo get_post_meta($child->ID, '_links_to_target', true) ?>" <?php if ($show_anchor) { echo "id=\"anchor-{$anchor}\""; } ?>>
-      <h3>
-          <?php echo $child->post_title ?>
-      </h3>
-    </a>
-    <p>
-      <?php echo $child->post_excerpt; ?>
-    </p>
+    <div class="searchable">
+      <a href="<?php echo get_permalink($child->ID) ?>" target="<?php echo get_post_meta($child->ID, '_links_to_target', true) ?>" <?php if ($show_anchor) { echo "id=\"anchor-{$anchor}\""; } ?>>
+        <h3>
+            <?php echo $child->post_title ?>
+        </h3>
+      </a>
+      <p>
+        <?php echo $child->post_excerpt; ?>
+      </p>
+    </div>
     <?php } ?>
 
   </div>

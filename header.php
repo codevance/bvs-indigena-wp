@@ -70,7 +70,7 @@
             <div class="hero-info">
               <div class="row">
                 <div class="form-group col-12 col-md-9 col-xl">
-                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Digite o que deseja pesquisar...">
+                  <input type="text" class="form-control" id="collectionSearchInput" placeholder="Digite o que deseja pesquisar...">
                 </div>
                 <div class="hero-btn col-12 col-md-3 col-xl-2">
                   <button type="button" class="btn btn-success btn-block">Pesquisar</button>
