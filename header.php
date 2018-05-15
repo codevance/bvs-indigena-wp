@@ -62,9 +62,20 @@
             <a href="<?php echo (is_home()) ? '#etnias' : get_site_url() . '#etnias' ?>"><span>busca</span> por etnias</a>
             <a href="<?php echo (is_home()) ? '#map' : get_site_url() . '#map' ?>"><span>busca</span> por regiões</a>
           </div>
-          <?php if (is_single() || (is_page() && get_the_title() !== 'Home') ) { ?>
+          <?php if ( (is_single() && get_post_type() !== 'vhl_collection') || (is_page() && get_the_title() !== 'Home') ) { ?>
             <div class="hero-info">
-            <h1 class="hi-title"><?php the_title(); ?></h1>
+              <h1 class="hi-title"><?php the_title(); ?></h1>
+            </div>
+          <?php } elseif ( is_single() && get_post_type() == 'vhl_collection' ) { ?>
+            <div class="hero-info">
+              <div class="row">
+                <div class="form-group col-12 col-md-9 col-xl">
+                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Digite o que deseja pesquisar...">
+                </div>
+                <div class="hero-btn col-12 col-md-3 col-xl-2">
+                  <button type="button" class="btn btn-success btn-block">Pesquisar</button>
+                </div>
+              </div>
             </div>
           <?php } else { ?>
             <div class="search">
