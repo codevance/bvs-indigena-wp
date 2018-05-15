@@ -15,7 +15,7 @@ class BVS_Theme {
 
 
   public function custom_excerpt_length( $length ) {
-    return 20;
+    return 10;
   }
 
   public function nav_class( $classes, $item ) {
