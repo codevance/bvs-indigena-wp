@@ -62,7 +62,7 @@
                 <div class="post-item">
                   <span class="marking" style="background-color: #95B515"><a href="<?php the_permalink(); ?>"><?php echo get_the_category()[0]->cat_name; ?></a></span>
                   <h6 class="fc-title">
-                  <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+                  <a href="<?php the_permalink() ?>"><?php echo wp_trim_words(get_the_title(), '12'); ?></a>
                   </h6>
                   <span class="published">Publicado em <?php echo get_the_date("d/m/Y") ?></span>
                   <p class="fc-text">
