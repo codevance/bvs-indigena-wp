@@ -55,7 +55,7 @@
             <div class="row">
                 <div class="col-12 col-md-4 col-lg-6 col-xl-5">
                   <a href="<?php the_permalink(); ?>">
-                    <?php the_post_thumbnail('thumbnail') ?>
+                    <?php the_post_thumbnail('small_highlight') ?>
                   </a>
                 </div>
                 <div class="col-12 col-md-8 col-lg-6 col-xl-7">

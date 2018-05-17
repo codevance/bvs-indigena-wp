@@ -3,6 +3,7 @@ class BVS_Theme {
 
   public function __construct(){
     add_action( 'init', array($this, 'partners_post_type') );
+    add_action( 'init', array($this, 'image_sizes') );
     add_action( 'after_setup_theme', array($this, 'register_menus') );
     add_action( 'wp_enqueue_scripts', array($this, 'enqueue_assets') );
     add_action( 'add_meta_boxes', array($this, 'theme_metaboxes') );
@@ -13,6 +14,9 @@ class BVS_Theme {
     add_filter( 'excerpt_length', array($this, 'custom_excerpt_length'), 999 );
   }
 
+  public function image_sizes(){
+    add_image_size('small_highlight', 200, 160);
+  }
 
   public function custom_excerpt_length( $length ) {
     return 10;
