@@ -13061,14 +13061,16 @@ var timeline = _animejs2.default.timeline();
 var duration = 300;
 
 timeline.add({
-    targets: '.hero .brand',
+    targets: '.hero .brand, .hero .search',
     translateY: -120,
+    paddingBottom: 0,
+    marginTop: 30,
     opacity: 0,
     height: 0,
     easing: 'easeInOutQuad',
     duration: duration
 }).add({
-    targets: '.hero .search, .hero .hero-info',
+    targets: '.hero .hero-info',
     marginTop: 20,
     paddingBottom: 20,
     easing: 'easeInOutQuad',
