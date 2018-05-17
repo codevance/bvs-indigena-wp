@@ -53,8 +53,10 @@
     <div class="hero" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/hero.png)">
       <div class="container">
         <div class="brand">
-          <img src="<?php echo get_template_directory_uri() ?>/assets/images/logo-bvs.png" alt="">
-          <h1 class="hero-title">Saúde dos povos indígenas</h1>
+          <a href="<?php echo get_site_url(); ?>">
+            <img src="<?php echo get_template_directory_uri() ?>/assets/images/logo-bvs.png" alt="">
+            <h1 class="hero-title">Saúde dos povos indígenas</h1>
+          </a>
         </div>
         <div class="content-wrapper">
           <div class="search-filter">
