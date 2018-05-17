@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
   <head>
-    <title><?php the_title(); ?></title>
+    <title><?php wp_title(); ?></title>
     
     <!-- Required meta tags -->
     <meta charset="utf-8">

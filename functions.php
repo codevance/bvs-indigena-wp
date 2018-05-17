@@ -12,6 +12,23 @@ class BVS_Theme {
     add_filter( 'nav_menu_css_class', array($this, 'nav_class'), 10, 2 );
     add_filter( 'wp_nav_menu', array($this, 'nav_link_class') );
     add_filter( 'excerpt_length', array($this, 'custom_excerpt_length'), 999 );
+    add_filter( 'get_the_archive_title', array($this, 'archive_title') );
+  }
+  
+  public function archive_title( $title ) {
+    if ( is_category() ) {
+        $title = single_cat_title( '', false );
+    } elseif ( is_tag() ) {
+        $title = single_tag_title( '', false );
+    } elseif ( is_author() ) {
+        $title = '<span class="vcard">' . get_the_author() . '</span>';
+    } elseif ( is_post_type_archive() ) {
+        $title = post_type_archive_title( '', false );
+    } elseif ( is_tax() ) {
+        $title = single_term_title( '', false );
+    }
+  
+    return $title;
   }
 
   public function image_sizes(){

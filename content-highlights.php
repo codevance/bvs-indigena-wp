@@ -21,7 +21,7 @@
             <div class="col-12 col-lg-6">
               <div class="featured" style="background-image: url(<?php echo get_the_post_thumbnail_url(null, 'large'); ?>);">
                 <div class="featured-content">
-                  <span class="marking" style="background-color: #71B42D"><a href="<?php the_permalink(); ?>"><?php echo get_the_category()[0]->cat_name; ?></a></span>
+                  <span class="marking" style="background-color: #71B42D"><a href="<?php echo get_category_link(get_the_category()[0]->term_id); ?>"><?php echo get_the_category()[0]->cat_name; ?></a></span>
                   <h6 class="fc-title">
                   <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                   </h6>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="col-12 col-md-8 col-lg-6 col-xl-7">
                 <div class="post-item">
-                  <span class="marking" style="background-color: #95B515"><a href="<?php the_permalink(); ?>"><?php echo get_the_category()[0]->cat_name; ?></a></span>
+                  <span class="marking" style="background-color: #95B515"><a href="<?php echo get_category_link(get_the_category()[0]->term_id); ?>"><?php echo get_the_category()[0]->cat_name; ?></a></span>
                   <h6 class="fc-title">
                   <a href="<?php the_permalink() ?>"><?php echo wp_trim_words(get_the_title(), '12'); ?></a>
                   </h6>
