@@ -3,10 +3,8 @@
   <div class="theme-content">
     <div class="theme-header">
       <div class="row">
-        <div class="col-12 col-lg-4 col-xl-2 pl-2">
+        <div class="col-12 col-lg-12 col-xl-12 pl-12">
         <h2 class="theme-title line-bottom"><?php the_archive_title(); ?></h2>
-        </div>
-        <div class="col-12 col-lg-8 col-xl-10 pt-2">
         </div>
       </div>
     </div>
