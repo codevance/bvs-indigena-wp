@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
   <head>
-    <title><?php wp_title( '|', true, 'right' ); ?></title>
+    <title><?php wp_title( '|', true, 'right' ); bloginfo( 'name' ); ?></title>
     
     <!-- Required meta tags -->
     <meta charset="utf-8">
