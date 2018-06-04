@@ -30,12 +30,14 @@
   <div class="map-container">
   <img src="<?php echo get_template_directory_uri(); ?>/assets/images/map.svg" class="svg">
     <div class="sm-info">
+      <?php $states = get_page_by_title('Região Sul', 'OBJECT', 'vhl_collection'); ?>
       <div id="sul" class="regiao">
         <div class="pin"></div>
-        <h3 class="info-title">Região Sul</h3>
+        <h3 class="info-title">
+          <a href="<?php echo get_permalink($states->ID) ?>" target="<?php echo get_post_meta($states->ID, '_links_to_target', true) ?>"><?php echo $states->post_title; ?></a>
+        </h3>
         <ul class="info-list">
           <?php
-          $states = get_page_by_title('Região Sul', 'OBJECT', 'vhl_collection');
           if ( !empty($states) ) {
           $states = $states->ID;
           $args = array('post_parent' => $states, 'post_type' => 'vhl_collection', 'post_status' => 'publish');
@@ -48,11 +50,13 @@
         </ul>
       </div>
       <div id="sudeste" class="regiao">
+        <?php $states = get_page_by_title('Região Sudeste', 'OBJECT', 'vhl_collection'); ?>
         <div class="pin"></div>
-        <h3 class="info-title">Região Sudeste</h3>
+        <h3 class="info-title">
+          <a href="<?php echo get_permalink($states->ID) ?>" target="<?php echo get_post_meta($states->ID, '_links_to_target', true) ?>"><?php echo $states->post_title; ?></a>
+        </h3>
         <ul class="info-list">
           <?php
-          $states = get_page_by_title('Região Sudeste', 'OBJECT', 'vhl_collection'); 
           if ( !empty($states) ) {
           $states = $states->ID;
           $args = array('post_parent' => $states, 'post_type' => 'vhl_collection', 'post_status' => 'publish');
@@ -65,11 +69,13 @@
         </ul>
       </div>
       <div id="centro-oeste" class="regiao">
+        <?php $states = get_page_by_title('Região Centro Oeste', 'OBJECT', 'vhl_collection'); ?>
         <div class="pin"></div>
-        <h3 class="info-title">Região Centro Oeste</h3>
+        <h3 class="info-title">
+          <a href="<?php echo get_permalink($states->ID) ?>" target="<?php echo get_post_meta($states->ID, '_links_to_target', true) ?>"><?php echo $states->post_title; ?></a>
+        </h3>
         <ul class="info-list">
           <?php
-          $states = get_page_by_title('Região Centro Oeste', 'OBJECT', 'vhl_collection'); 
           if ( !empty($states) ) {
           $states = $states->ID;
           $args = array('post_parent' => $states, 'post_type' => 'vhl_collection', 'post_status' => 'publish');
@@ -82,11 +88,13 @@
         </ul>
       </div>
       <div id="nordeste" class="regiao">
+        <?php $states = get_page_by_title('Região Nordeste', 'OBJECT', 'vhl_collection'); ?>
         <div class="pin"></div>
-        <h3 class="info-title">Região Nordeste</h3>
+        <h3 class="info-title">
+          <a href="<?php echo get_permalink($states->ID) ?>" target="<?php echo get_post_meta($states->ID, '_links_to_target', true) ?>"><?php echo $states->post_title; ?></a>
+        </h3>
         <ul class="info-list">
           <?php
-          $states = get_page_by_title('Região Nordeste', 'OBJECT', 'vhl_collection'); 
           if ( !empty($states) ) {
           $states = $states->ID;
           $args = array('post_parent' => $states, 'post_type' => 'vhl_collection', 'post_status' => 'publish');
@@ -99,11 +107,13 @@
         </ul>
       </div>
       <div id="norte" class="regiao active">
+        <?php $states = get_page_by_title('Região Norte', 'OBJECT', 'vhl_collection'); ?>
         <div class="pin"></div>
-        <h3 class="info-title">Região Norte</h3>
+        <h3 class="info-title">
+          <a href="<?php echo get_permalink($states->ID) ?>" target="<?php echo get_post_meta($states->ID, '_links_to_target', true) ?>"><?php echo $states->post_title; ?></a>
+        </h3>
         <ul class="info-list">
           <?php
-          $states = get_page_by_title('Região Norte', 'OBJECT', 'vhl_collection'); 
           if ( !empty($states) ) {
           $states = $states->ID;
           $args = array('post_parent' => $states, 'post_type' => 'vhl_collection', 'post_status' => 'publish');
