@@ -57,7 +57,9 @@
         </h3>
       </a>
       <p>
-        <?php echo $child->post_excerpt; ?>
+        <p></p>
+        <?php echo $child->post_content; ?>
+        <p></p>
       </p>
     </div>
     <?php } ?>
