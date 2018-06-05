@@ -68,7 +68,7 @@
             <div class="hero-info">
               <h1 class="hi-title"><?php the_title(); ?></h1>
             </div>
-          <?php } elseif ( is_single() && get_post_type() == 'vhl_collection' ) { ?>
+          <?php } elseif ( (is_single() && get_post_type() == 'vhl_collection') || is_home() ) { ?>
             <div class="hero-info">
               <div class="row">
                 <div class="form-group col-12 col-md-9 col-xl">

@@ -36,7 +36,7 @@
     </div>
 
     <?php wp_footer(); ?>
-    <?php if ( is_single() && get_post_type() == 'vhl_collection' ) { ?>
+    <?php if ( (is_single() && get_post_type() == 'vhl_collection') || is_home() ) { ?>
     <script>
       $(document).ready(function () {
         (function ($) {

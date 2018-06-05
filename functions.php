@@ -89,6 +89,8 @@ class BVS_Theme {
           update_post_meta( $post->ID, 'bvs_highlight', 'big' );
       } elseif ( !empty($args['bvs_highlight']) && $args['bvs_highlight'] == 'small') {
         update_post_meta( $post->ID, 'bvs_highlight', 'small' );
+      } elseif ( !empty($args['bvs_highlight']) && $args['bvs_highlight'] == 'none' && get_post_meta($post->ID, 'bvs_highlight', true) !== '' ) {
+        update_post_meta( $post->ID, 'bvs_highlight', 'old' );
       } else {
         delete_post_meta( $post->ID, 'bvs_highlight' );
       }
