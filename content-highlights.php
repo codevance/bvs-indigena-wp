@@ -78,6 +78,11 @@
             wp_reset_postdata();
           }
           ?>
+          <div class="row">
+            <div class="col-12 text-center">
+              <a class="btn btn-success btn-lg" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" style="padding-top: 14px;">Ver Todos</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
