@@ -64,7 +64,7 @@
             <a href="<?php echo (is_home()) ? '#etnias' : get_site_url() . '#etnias' ?>"><span>busca</span> por etnias</a>
             <a href="<?php echo (is_home()) ? '#map' : get_site_url() . '#map' ?>"><span>busca</span> por regiões</a>
           </div>
-          <?php if ( (is_single() && get_post_type() !== 'vhl_collection') || (is_page() && get_the_title() !== 'Home') ) { ?>
+          <?php if ( (is_single() && (get_post_type() !== 'vhl_collection') || get_post_type() == 'vhl_collection' && empty(get_children(array('post_parent' => get_the_id(), 'post_type' => 'vhl_collection', 'post_status' => 'publish'))) ) || (is_page() && get_the_title() !== 'Home') ) { ?>
             <div class="hero-info">
               <h1 class="hi-title"><?php the_title(); ?></h1>
             </div>

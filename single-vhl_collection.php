@@ -1,4 +1,11 @@
 <?php get_header(); ?>
+<?php
+$args = array('post_parent' => get_the_id(), 'post_type' => 'vhl_collection', 'post_status' => 'publish', 'orderby' => 'title', 'order' => 'ASC');
+$children = get_children($args);
+
+if ( empty($children) ):
+  require_once('single.php');
+else: ?>
 <div class="container">
   <div class="theme-content">
     <div class="theme-header">
@@ -42,8 +49,6 @@
     </div>
 
     <?php
-    $args = array('post_parent' => get_the_id(), 'post_type' => 'vhl_collection', 'post_status' => 'publish', 'orderby' => 'title', 'order' => 'ASC');
-    $children = get_children($args);
     $anchor = '';
     foreach ($children as $child) {
       $child = get_post($child);
@@ -66,4 +71,5 @@
 
   </div>
 </div>
+<?php endif; ?>
 <?php get_footer(); ?>
